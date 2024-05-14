@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
 
 app = FastAPI()
 
@@ -12,11 +13,12 @@ def ramon():
 
 @app.get("/hello/{name}")
 def llamada(name):
-    return f"Hello {name}!"
+    return f"Hello, bienvenido {name}!"
 
-@app.get("/home")
-def home():
-    return "<html><body><h1>Hola !! </h1></body></html>"
+@app.get("/home",response_class=HTMLResponse)
+def read_root():
+    return HTMLResponse("<h1>Hello World</h1>")
+
 
 if __name__ == "__main__":
     import uvicorn
