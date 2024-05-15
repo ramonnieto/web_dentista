@@ -1,0 +1,27 @@
+{# templates/alumnos.html #}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Google Cloud</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <table class="table">
+        <tr>
+            <th>Nombre:</th>
+            <th>Apellido:</th>
+        </tr>
+        {% for alumno in alumnos %}
+        <tr>
+            <td>{{ alumno.nombre }}</td>
+            <td>{{ alumno.apellido }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+  </body>
+</html>

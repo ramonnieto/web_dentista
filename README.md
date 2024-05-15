@@ -2,7 +2,7 @@
 
 ## Implementación mediante env y fastAPI
 
-- pip3 install virtualenv 
+- pip3 install virtualenv
 - pip3 install fastapi
 - copiar requerimientos para exportar a otro entorno pip3 freeze > requerimiento.txt
 - importar requerimientos pip3 install -r requerimiento.txt
