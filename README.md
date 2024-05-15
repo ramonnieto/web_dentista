@@ -13,3 +13,6 @@
 - instalar modulo en visual studio code python environment manager
 
   Crear carpeta para desarrollar en env todo el contenido
+arranca el servidor web python test.py
+ejecuta la query http localhost:8000/hello
+Ambos consolas tiene que estar en env
