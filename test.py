@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 template = Jinja2Templates(directory="template")
@@ -15,6 +16,12 @@ alumnos = [
 def Htemplate(request:Request,Ramon):
     return template.TemplateResponse("template.html", {"request":request,"hola":f"Soy {Ramon}"})
 
+
+@app.get("/login/{id}", response_class=HTMLResponse)
+async def read_item(request: Request, id: str):
+    return template.TemplateResponse(
+        request=request, name="login.html", context={"id": id}
+    )
 
 #bucle que dibuja tabla
 @app.get("/alumnos")
